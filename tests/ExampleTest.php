@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace Masterix21\XBladeComponents\Tests;
 
 class ExampleTest extends TestCase
 {

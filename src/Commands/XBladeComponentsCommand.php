@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Skeleton\Commands;
+namespace Masterix21\XBladeComponents\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class XBladeComponentsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'x-blade-components';
 
     public $description = 'My command';
 

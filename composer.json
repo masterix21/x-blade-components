@@ -1,16 +1,16 @@
 {
-    "name": "spatie/:package_name",
-    "description": ":package_description",
+    "name": "spatie/x-blade-components",
+    "description": "Laravel Blade Components ready to use",
     "keywords": [
         "spatie",
-        ":package_name"
+        "x-blade-components"
     ],
-    "homepage": "https://github.com/spatie/:package_name",
+    "homepage": "https://github.com/spatie/x-blade-components",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
+            "name": "Luca Longo",
+            "email": "masterix21@gmail.com",
             "homepage": "https://spatie.be",
             "role": "Developer"
         }
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Masterix21\\XBladeComponents\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Masterix21\\XBladeComponents\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "Masterix21\\XBladeComponents\\XBladeComponentsServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "XBladeComponents": "Masterix21\\XBladeComponents\\XBladeComponentsFacade"
             }
         }
     },
