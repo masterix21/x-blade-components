@@ -25,7 +25,6 @@ class Field extends Component
         bool $readOnly = false,
         $value = null
     ) {
-
         $this->id = $id ?: Str::uuid();
         $this->name = $name;
         $this->label = $label;

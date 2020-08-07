@@ -2,7 +2,6 @@
 
 namespace Masterix21\XBladeComponents;
 
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Masterix21\XBladeComponents\View\Components\Form\Field;
 use Masterix21\XBladeComponents\View\Components\Form\Validator;
