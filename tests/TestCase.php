@@ -2,8 +2,8 @@
 
 namespace Masterix21\XBladeComponents\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Masterix21\XBladeComponents\XBladeComponentsServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
