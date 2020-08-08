@@ -19,9 +19,9 @@ You can install the package via composer:
 ```bash
 composer require masterix21/package-x-blade-components-laravel
 
-npm install tailwindcss @tailwindcss/ui alpinejs
+npm install tailwindcss @tailwindcss/ui alpinejs imask flatpickr
 // or
-yarn add tailwindcss @tailwindcss/ui alpinejs
+yarn add tailwindcss @tailwindcss/ui alpinejs imask flatpickr
 ```
 
 Then add `@tailwindcss/ui` to your Tailwind plugin list:
