@@ -1,55 +1,28 @@
-# Laravel Blade Components ready to use
+# Laravel Blade Components ready to use (WORK IN PROGRESS)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/x-blade-components.svg?style=flat-square)](https://packagist.org/packages/spatie/x-blade-components)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/x-blade-components/run-tests?label=tests)](https://github.com/spatie/x-blade-components/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/x-blade-components.svg?style=flat-square)](https://packagist.org/packages/spatie/x-blade-components)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/masterix21/x-blade-components.svg?style=flat-square)](https://packagist.org/packages/masterix21/x-blade-components)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/masterix21/x-blade-components/run-tests?label=tests)](https://github.com/masterix21/x-blade-components/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/masterix21/x-blade-components.svg?style=flat-square)](https://packagist.org/packages/masterix21/x-blade-components)
 
+Components well tested for Laravel applications. Ideally with a TALL stack configuration.
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+...to be continued...
 
 ## Support us
 
-Learn how to create a package like this one, by watching our premium video course:
-
-[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+If you like my work, you can [sponsoring me](https://github.com/masterix21).
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require spatie/package-x-blade-components-laravel
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --provider="Masterix21\XBladeComponents\XBladeComponentsServiceProvider" --tag="migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="Masterix21\XBladeComponents\XBladeComponentsServiceProvider" --tag="config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
+composer require masterix21/package-x-blade-components-laravel
 ```
 
 ## Usage
 
-``` php
-$x-blade-components = new Masterix21\XBladeComponents();
-echo $x-blade-components->echoPhrase('Hello, Masterix21!');
-```
+*** Work in progress ***
 
 ## Testing
 
@@ -67,7 +40,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you discover any security related issues, please email freek@masterix21.be instead of using the issue tracker.
 
 ## Credits
 
