@@ -36,6 +36,6 @@ class Field extends Component
 
     public function render()
     {
-        return view('xbc:form.field');
+        return view('bc::form.field');
     }
 }

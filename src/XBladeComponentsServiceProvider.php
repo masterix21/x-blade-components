@@ -4,6 +4,7 @@ namespace Masterix21\XBladeComponents;
 
 use Illuminate\Support\ServiceProvider;
 use Masterix21\XBladeComponents\View\Components\Form\Field;
+use Masterix21\XBladeComponents\View\Components\Form\InputField;
 use Masterix21\XBladeComponents\View\Components\Form\Validator;
 
 class XBladeComponentsServiceProvider extends ServiceProvider
@@ -16,11 +17,11 @@ class XBladeComponentsServiceProvider extends ServiceProvider
             ], 'views');
         }
 
-        $this->loadViewsFrom(__DIR__ .'/../resources/views', 'xbc');
+        $this->loadViewsFrom(__DIR__ .'/../resources/views/components', 'bc');
 
-        $this->loadViewComponentsAs('xbc', [
+        $this->loadViewComponentsAs('bc', [
             Field::class,
-            Validator::class,
+            InputField::class,
         ]);
     }
 }

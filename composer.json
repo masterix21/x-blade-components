@@ -1,8 +1,8 @@
 {
-    "name": "spatie/x-blade-components",
+    "name": "masterix21/x-blade-components",
     "description": "Laravel Blade Components ready to use",
     "keywords": [
-        "spatie",
+        "laravel",
         "x-blade-components"
     ],
     "homepage": "https://github.com/spatie/x-blade-components",
@@ -11,7 +11,7 @@
         {
             "name": "Luca Longo",
             "email": "masterix21@gmail.com",
-            "homepage": "https://spatie.be",
+            "homepage": "https://masterix.org",
             "role": "Developer"
         }
     ],

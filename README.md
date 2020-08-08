@@ -1,10 +1,10 @@
-# Laravel Blade Components ready to use (WORK IN PROGRESS)
+# Laravel Blade Components ready to use (🚧 🚧 🚧)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/masterix21/x-blade-components.svg?style=flat-square)](https://packagist.org/packages/masterix21/x-blade-components)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/masterix21/x-blade-components/run-tests?label=tests)](https://github.com/masterix21/x-blade-components/actions?query=workflow%3Arun-tests+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/masterix21/x-blade-components.svg?style=flat-square)](https://packagist.org/packages/masterix21/x-blade-components)
 
-Components well tested for Laravel applications. Ideally with a TALL stack configuration.
+Tailwind.css ready components well tested for Laravel applications. Ideally with a TALL stack configuration.
 
 ...to be continued...
 
@@ -18,6 +18,17 @@ You can install the package via composer:
 
 ```bash
 composer require masterix21/package-x-blade-components-laravel
+npm install tailwindcss @tailwindcss/ui
+```
+
+Then add `@tailwindcss/ui` to your Tailwind plugin list:
+```js
+// tailwind.config.js
+module.exports = {
+  plugins: [
+    require('@tailwindcss/ui'),
+  ]
+}
 ```
 
 ## Usage
