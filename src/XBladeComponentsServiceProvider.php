@@ -5,6 +5,8 @@ namespace Masterix21\XBladeComponents;
 use Illuminate\Support\ServiceProvider;
 use Masterix21\XBladeComponents\View\Components\Form\Field;
 use Masterix21\XBladeComponents\View\Components\Form\InputField;
+use Masterix21\XBladeComponents\View\Components\Form\PasswordField;
+use Masterix21\XBladeComponents\View\Components\Form\TextareaField;
 use Masterix21\XBladeComponents\View\Components\Form\Validator;
 
 class XBladeComponentsServiceProvider extends ServiceProvider
@@ -22,6 +24,8 @@ class XBladeComponentsServiceProvider extends ServiceProvider
         $this->loadViewComponentsAs('bc', [
             Field::class,
             InputField::class,
+            TextareaField::class,
+            PasswordField::class,
         ]);
     }
 }
