@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 
 class Field extends Component
 {
-    public ?string $id;
+    public string $id;
     public ?string $name;
     public ?string $label;
     public ?string $errorBag;
@@ -25,7 +25,7 @@ class Field extends Component
         bool $readOnly = false,
         $value = null
     ) {
-        $this->id = $id ?: Str::uuid();
+        $this->id = $id ?: (string) Str::uuid();
         $this->name = $name;
         $this->label = $label;
         $this->errorBag = $errorBag;
