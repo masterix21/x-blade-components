@@ -3,6 +3,7 @@
 namespace Masterix21\XBladeComponents;
 
 use Illuminate\Support\ServiceProvider;
+use Masterix21\XBladeComponents\View\Components\Form\DateField;
 use Masterix21\XBladeComponents\View\Components\Form\Field;
 use Masterix21\XBladeComponents\View\Components\Form\InputField;
 use Masterix21\XBladeComponents\View\Components\Form\MoneyField;
@@ -37,6 +38,7 @@ class XBladeComponentsServiceProvider extends ServiceProvider
             NumberField::class,
             MoneyField::class,
             ToggleField::class,
+            DateField::class,
         ]);
     }
 

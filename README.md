@@ -34,6 +34,13 @@ module.exports = {
 }
 ```
 
+Finally, it's important to add all styles to our css, less or scss:
+```scss
+[x-cloak] { display: none; }
+
+@import '~flatpickr/dist/flatpickr.min.css';
+```
+
 ## Usage
 
 *** Work in progress ***
