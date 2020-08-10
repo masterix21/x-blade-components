@@ -15,6 +15,7 @@ class Field extends Component
     public bool $readOnly;
     /** @var mixed */
     public $value;
+    public ?string $placeholder;
 
     public function __construct(
         ?string $id = null,
@@ -23,7 +24,8 @@ class Field extends Component
         ?string $errorBag = null,
         bool $disabled = false,
         bool $readOnly = false,
-        $value = null
+        $value = null,
+        ?string $placeholder = null
     ) {
         $this->id = $id ?: (string) Str::uuid();
         $this->name = $name;
@@ -32,6 +34,7 @@ class Field extends Component
         $this->disabled = $disabled;
         $this->readOnly = $readOnly;
         $this->value = $value;
+        $this->placeholder = $placeholder;
     }
 
     public function render()

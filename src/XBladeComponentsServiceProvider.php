@@ -9,6 +9,7 @@ use Masterix21\XBladeComponents\View\Components\Form\InputField;
 use Masterix21\XBladeComponents\View\Components\Form\MoneyField;
 use Masterix21\XBladeComponents\View\Components\Form\NumberField;
 use Masterix21\XBladeComponents\View\Components\Form\PasswordField;
+use Masterix21\XBladeComponents\View\Components\Form\SelectField;
 use Masterix21\XBladeComponents\View\Components\Form\TextareaField;
 use Masterix21\XBladeComponents\View\Components\Form\ToggleField;
 
@@ -39,6 +40,7 @@ class XBladeComponentsServiceProvider extends ServiceProvider
             MoneyField::class,
             ToggleField::class,
             DateField::class,
+            SelectField::class,
         ]);
     }
 
