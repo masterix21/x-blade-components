@@ -6,7 +6,7 @@
         @if ($prepend ?? null) {{ $prepend }} @endif
 
         @if ($currency)
-            <div class="flex items-center px-3 border @error($errorBag) border-red-300 text-red-500 @endif rounded-l-md border-r-0 select-none">
+            <div class="flex items-center px-3 border @error($errorBag) border-red-300 text-red-500 @else text-gray-500 @endif rounded-l-md border-r-0 select-none text-sm">
                 {{ $currency }}
             </div>
         @endif
