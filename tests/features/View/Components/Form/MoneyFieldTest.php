@@ -2,15 +2,15 @@
 namespace Masterix21\XBladeComponents\Tests\features\View\Components\Form;
 
 use Illuminate\Support\Str;
-use Masterix21\XBladeComponents\View\Components\Form\InputField;
+use Masterix21\XBladeComponents\View\Components\Form\MoneyField;
 
-class InputFieldTest extends TestCase
+class MoneyFieldTest extends TestCase
 {
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->field = $this->app->make(InputField::class)
+        $this->field = $this->app->make(MoneyField::class)
             ->resolveView()
             ->with('id', Str::uuid())
             ->with('name', 'test-input-label')
@@ -20,7 +20,9 @@ class InputFieldTest extends TestCase
             ->with('slot', null)
             ->with('readOnly', false)
             ->with('disabled', false)
-            ->with('attributes', null);
+            ->with('attributes', null)
+            ->with('scale', 2)
+            ->with('currency', '$');
     }
 
     /** @test */
@@ -35,15 +37,21 @@ class InputFieldTest extends TestCase
     /** @test */
     public function it_show_the_value()
     {
-        $this->field->with('value', 'Hello this is my value');
+        $this->field->with('value', 212.87);
 
         tap($this->getFieldElement(), function ($element) {
             $this->assertEquals(
-                'Hello this is my value',
+                212.87,
                 $element->attr('value'),
             );
 
             $this->assertNull($element->attr('readonly'));
         });
+    }
+
+    /** @test */
+    public function it_show_the_currency()
+    {
+        $this->assertStringContainsString('$', $this->field->toHtml());
     }
 }
