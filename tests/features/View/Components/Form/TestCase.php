@@ -2,7 +2,6 @@
 
 namespace Masterix21\XBladeComponents\Tests\features\View\Components\Form;
 
-
 use Illuminate\View\View;
 use Symfony\Component\DomCrawler\Crawler;
 
