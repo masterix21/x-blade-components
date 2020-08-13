@@ -17,7 +17,7 @@ If you like my work, you can [sponsoring me](https://github.com/masterix21).
 You can install the package via composer:
 
 ```bash
-composer require masterix21/package-x-blade-components-laravel
+composer require masterix21/x-blade-components
 
 npm install tailwindcss @tailwindcss/ui alpinejs imask flatpickr
 // or
