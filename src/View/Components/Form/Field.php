@@ -16,6 +16,7 @@ class Field extends Component
     /** @var mixed */
     public $value;
     public ?string $placeholder;
+    public bool $hideContainerBorder;
 
     public function __construct(
         ?string $id = null,
@@ -25,7 +26,8 @@ class Field extends Component
         bool $disabled = false,
         bool $readOnly = false,
         $value = null,
-        ?string $placeholder = null
+        ?string $placeholder = null,
+        bool $hideContainerBorder = false
     ) {
         $this->id = $id ?: (string) Str::uuid();
         $this->name = $name;
@@ -35,6 +37,7 @@ class Field extends Component
         $this->readOnly = $readOnly;
         $this->value = $value;
         $this->placeholder = $placeholder;
+        $this->hideContainerBorder = $hideContainerBorder;
     }
 
     public function render()

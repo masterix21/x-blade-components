@@ -1,7 +1,12 @@
 <x-bc-form:field :label="$label"
                  :error-bag="$errorBag"
                  :readOnly="$readOnly"
-                 :disabled="$disabled">
+                 :disabled="$disabled"
+                 hide-container-border>
+    @if ($prepend ?? null)
+        <x-slot name="prepend">{{ $prepend }}</x-slot>
+    @endif
+
     <a x-data="{isOn: {{ $trueValue === $value ? 'true' : 'false' }}, trueValue: {{ var_export($trueValue, true) }}, falseValue: {{ var_export($falseValue, true) }}}"
        {{ $attributes }}
        x-on:click="isOn = ! isOn"
@@ -28,4 +33,8 @@
             </span>
         </span>
     </a>
+
+    @if ($append ?? null)
+        <x-slot name="append">{{ $append }}</x-slot>
+    @endif
 </x-bc-form:field>

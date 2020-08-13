@@ -9,6 +9,7 @@ use Illuminate\Support\MessageBag;
 use Illuminate\Support\ViewErrorBag;
 use Masterix21\XBladeComponents\XBladeComponentsServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Symfony\Component\DomCrawler\Crawler;
 
 class TestCase extends Orchestra
 {
@@ -40,5 +41,15 @@ class TestCase extends Orchestra
         $viewErrorBag->put($key, new MessageBag($errors));
 
         View::share('errors', $viewErrorBag);
+    }
+
+    public function htmlCrawlerSelector($html, $selector)
+    {
+        return (new Crawler($html))->filter($selector);
+    }
+
+    public function assertHtmlContainsSelector(string $html, string $selector)
+    {
+        $this->assertEquals(1, $this->htmlCrawlerSelector($html, $selector)->count());
     }
 }

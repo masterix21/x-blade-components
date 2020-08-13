@@ -2,36 +2,28 @@
                  :error-bag="$errorBag"
                  :readOnly="$readOnly"
                  :disabled="$disabled">
-    <div class="flex relative rounded-md shadow-sm">
-        @if ($prepend ?? null) {{ $prepend }} @endif
+    <x-slot name="prepend">
+        {{ $prepend ?? null }}
 
         @if ($currency)
             <div class="flex items-center px-3 border @error($errorBag) border-red-300 text-red-500 @else text-gray-500 @endif rounded-l-md border-r-0 select-none text-sm">
                 {{ $currency }}
             </div>
         @endif
+    </x-slot>
 
-        <div class="relative flex-grow focus-within:z-10">
-            <input id="{{ $id }}"
-                   class="form-input block w-full @if (! blank($currency) || ! blank($prepend ?? null) || ! blank($append ?? null)) rounded-none @endif @if (blank($currency) && blank($prepend ?? null)) rounded-l-md @else border-l-0 @endif @if (blank($append ?? null)) rounded-r-md @else border-r-0 @endif transition ease-in-out duration-150 sm:text-sm sm:leading-5 {{ $errors->has($errorBag) ? 'pr-10 border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red ' : '' }} {{ $readOnly ? 'bg-gray-50 text-gray-500' : '' }}"
-                   {{ $attributes }}
-                   x-data
-                   x-ref="input"
-                   x-init="IMask($refs.input, { mask: Number, scale: {{ $scale }}, normalizeZeros: true, radix: '.', mapToRadix: [','] })"
-                   @if ($readOnly) readonly @endif
-                   @if ($disabled) disabled @endif
-                   @if (! blank($name)) name="{{ $name }}" @endif
-                   @if (! blank($value)) value="{{ $value }}" @endif />
+    <input id="{{ $id }}"
+           class="form-input block w-full @if (! blank($currency) || ! blank($prepend ?? null) || ! blank($append ?? null)) rounded-none @endif @if (blank($currency) && blank($prepend ?? null)) rounded-l-md @else border-l-0 @endif @if (blank($append ?? null)) rounded-r-md @else border-r-0 @endif transition ease-in-out duration-150 sm:text-sm sm:leading-5 {{ $errors->has($errorBag) ? 'pr-10 border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red ' : '' }} {{ $readOnly ? 'bg-gray-50 text-gray-500' : '' }}"
+           {{ $attributes }}
+           x-data
+           x-ref="input"
+           x-init="IMask($refs.input, { mask: Number, scale: {{ $scale }}, normalizeZeros: true, radix: '.', mapToRadix: [','] })"
+           @if ($readOnly) readonly @endif
+           @if ($disabled) disabled @endif
+           @if (! blank($name)) name="{{ $name }}" @endif
+           @if (! blank($value)) value="{{ $value }}" @endif />
 
-            @error($errorBag)
-                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                    <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-            @enderror
-        </div>
-
-        {{ $append ?? null }}
-    </div>
+    @if ($append ?? null)
+        <x-slot name="append">{{ $append }}</x-slot>
+    @endif
 </x-bc-form:field>

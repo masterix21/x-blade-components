@@ -1,32 +1,22 @@
 <?php
 namespace Masterix21\XBladeComponents\Tests\features\View\Components\Form;
 
-use Illuminate\Support\Facades\Blade;
-use Masterix21\XBladeComponents\Tests\TestCase;
+use Illuminate\Support\Str;
 use Masterix21\XBladeComponents\View\Components\Form\Field;
 
 class FieldTest extends TestCase
 {
-    protected $field;
-
     public function setUp(): void
     {
         parent::setUp();
 
         $this->field = $this->app->make(Field::class)
             ->resolveView()
+            ->with('id', Str::uuid())
             ->with('label', 'Test label')
             ->with('errorBag', null)
-            ->with('slot', null);
-    }
-
-    /** @test */
-    public function it_works_without_errors_using_no_arguments()
-    {
-        $compiled = Blade::compileString("<x-bc-form:field />");
-
-        $this->assertStringContainsString(Field::class, $compiled);
-        $this->assertStringContainsString("withName('bc-form:field')", $compiled);
+            ->with('slot', null)
+            ->with('hideContainerBorder', false);
     }
 
     /** @test */
@@ -35,20 +25,6 @@ class FieldTest extends TestCase
         $html = $this->field->toHtml();
 
         $this->assertStringContainsString('Test label', $html);
-    }
-
-    /** @test */
-    public function it_show_errors()
-    {
-        $this->withViewErrors(['test' => 'Field required']);
-
-        $html = $this->field
-            ->with('label', 'Test label with errors')
-            ->with('errorBag', 'test')
-            ->toHtml();
-
-        $this->assertStringContainsString('Test label with errors', $html);
-        $this->assertStringContainsString('<p class="mt-1 text-xs text-red-600">Field required</p>', $html);
     }
 
     /** @test */
@@ -61,5 +37,21 @@ class FieldTest extends TestCase
 
         $this->assertStringContainsString('Test label with slot', $html);
         $this->assertStringContainsString('This is the slot', $html);
+    }
+
+    /** @test */
+    public function it_show_a_readonly_field()
+    {
+        $this->field->with('readOnly', true);
+
+        $this->assertEquals('true', $this->getFieldContainerElement()->attr('data-readonly'));
+    }
+
+    /** @test */
+    public function it_show_a_disabled_field()
+    {
+        $this->field->with('disabled', true);
+
+        $this->assertEquals('true', $this->getFieldContainerElement()->attr('data-disabled'));
     }
 }
