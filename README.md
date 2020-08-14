@@ -7,8 +7,6 @@
 
 Tailwind.css ready components well tested for Laravel applications. Ideally with a TALL stack configuration.
 
-...to be continued...
-
 ## Support us
 
 If you like my work, you can [sponsoring me](https://github.com/sponsors/masterix21).
