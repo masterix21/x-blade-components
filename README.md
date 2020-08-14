@@ -44,7 +44,7 @@ Finally, it's important to add all styles to our css, less or scss:
 
 ## Usage
 
-*** Work in progress ***
+[See our wiki pages](https://github.com/masterix21/x-blade-components/wiki)
 
 ## Testing
 
