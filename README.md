@@ -1,4 +1,4 @@
-# Laravel Blade Components ready to use (🚧 🚧 🚧)
+# Laravel Blade Components ready to use
 
 [![MIT License](https://img.shields.io/github/license/masterix21/x-blade-components)](https://img.shields.io/github/license/masterix21/x-blade-components)
 [![Latest Version](https://img.shields.io/github/v/release/masterix21/x-blade-components)](https://packagist.org/packages/masterix21/x-blade-components)
