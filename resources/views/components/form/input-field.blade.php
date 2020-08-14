@@ -1,4 +1,5 @@
-<x-bc-form:field :label="$label"
+<x-bc-form:field :id="$id"
+                 :label="$label"
                  :error-bag="$errorBag"
                  :readOnly="$readOnly"
                  :disabled="$disabled">

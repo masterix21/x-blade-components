@@ -1,4 +1,5 @@
-<x-bc-form:field :label="$label"
+<x-bc-form:field :id="$id"
+                 :label="$label"
                  :error-bag="$errorBag"
                  :readOnly="$readOnly"
                  :disabled="$disabled"
@@ -9,7 +10,8 @@
 
     <a x-data="{isOn: {{ $trueValue === $value ? 'true' : 'false' }}, trueValue: {{ var_export($trueValue, true) }}, falseValue: {{ var_export($falseValue, true) }}}"
        {{ $attributes }}
-       x-on:click="isOn = ! isOn"
+       id="{{ $id }}"
+       x-on:click="isOn = {{ $readOnly || $disabled ? 'false' : '! isOn' }}"
        x-init="$watch('isOn', value => $dispatch('input', value ? trueValue : falseValue))"
        role="checkbox"
        tabindex="0"

@@ -24,6 +24,7 @@
         "orchestra/testbench": "^5.0",
         "phpunit/phpunit": "^9.0",
         "psalm/plugin-laravel": "^1.2",
+        "symfony/css-selector": "^5.1",
         "symfony/dom-crawler": "^5.1",
         "vimeo/psalm": "^3.11"
     },
