@@ -1,8 +1,9 @@
 # Laravel Blade Components ready to use (🚧 🚧 🚧)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/masterix21/x-blade-components.svg?style=flat-square)](https://packagist.org/packages/masterix21/x-blade-components)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/masterix21/x-blade-components/run-tests?label=tests)](https://github.com/masterix21/x-blade-components/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/masterix21/x-blade-components.svg?style=flat-square)](https://packagist.org/packages/masterix21/x-blade-components)
+[![MIT License](https://img.shields.io/github/license/masterix21/x-blade-components)](https://img.shields.io/github/license/masterix21/x-blade-components)
+[![Latest Version](https://img.shields.io/github/v/release/masterix21/x-blade-components)](https://packagist.org/packages/masterix21/x-blade-components)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/masterix21/x-blade-components/Tests/master)](https://github.com/masterix21/x-blade-components/actions?query=workflow%3Arun-tests+branch%3Amaster) 
+[![Total Downloads](https://img.shields.io/packagist/dt/masterix21/x-blade-components.svg)](https://packagist.org/packages/masterix21/x-blade-components)
 
 Tailwind.css ready components well tested for Laravel applications. Ideally with a TALL stack configuration.
 
