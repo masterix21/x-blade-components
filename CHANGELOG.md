@@ -2,6 +2,6 @@
 
 All notable changes to `x-blade-components` will be documented in this file
 
-## 1.0.0 - 202X-XX-XX
+## 1.0.0 - 2020-08-14
 
-- initial release
+- initial release with Form components
