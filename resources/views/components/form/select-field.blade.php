@@ -9,7 +9,7 @@
     @endif
 
     <div x-data="{ isOn: false, value: {{ json_encode($value ?: []) }}, options: {{ json_encode($options) }} }"
-         id="{{ $id }}"
+         @if ($id ?? false) id="{{ $id }}" @endif
          class="relative w-full"
          @click.away="isOn = false"
          {{ $attributes }}

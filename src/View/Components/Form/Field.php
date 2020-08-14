@@ -2,12 +2,11 @@
 
 namespace Masterix21\XBladeComponents\View\Components\Form;
 
-use Illuminate\Support\Str;
 use Illuminate\View\Component;
 
 class Field extends Component
 {
-    public string $id;
+    public ?string $id;
     public ?string $name;
     public ?string $label;
     public ?string $errorBag;
@@ -29,7 +28,7 @@ class Field extends Component
         ?string $placeholder = null,
         bool $hideContainerBorder = false
     ) {
-        $this->id = $id ?: (string) Str::uuid();
+        $this->id = $id;
         $this->name = $name;
         $this->label = $label;
         $this->errorBag = $errorBag;

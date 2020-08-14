@@ -13,7 +13,7 @@
         </div>
     </x-slot>
 
-    <input id="{{ $id }}"
+    <input @if ($id ?? false) id="{{ $id }}" @endif
            class="form-input block w-full rounded-none border-l-0 @if (blank($append ?? null)) rounded-r-md @else border-r-0 @endif transition ease-in-out duration-150 sm:text-sm sm:leading-5 {{ $errors->has($errorBag) ? 'pr-10 border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red ' : '' }} {{ $readOnly ? 'bg-gray-50 text-gray-500' : '' }}"
            {{ $attributes }}
            x-data

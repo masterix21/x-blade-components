@@ -10,7 +10,7 @@
 
     <a x-data="{isOn: {{ $trueValue === $value ? 'true' : 'false' }}, trueValue: {{ var_export($trueValue, true) }}, falseValue: {{ var_export($falseValue, true) }}}"
        {{ $attributes }}
-       id="{{ $id }}"
+       @if ($id ?? false) id="{{ $id }}" @endif
        x-on:click="isOn = {{ $readOnly || $disabled ? 'false' : '! isOn' }}"
        x-init="$watch('isOn', value => $dispatch('input', value ? trueValue : falseValue))"
        role="checkbox"

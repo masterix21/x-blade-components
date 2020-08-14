@@ -1,4 +1,4 @@
-<div id="container-{{ $id }}"
+<div @if ($id ?? null) id="container-{{ $id }}" @endif
      class="space-y-1"
      @if ($disabled ?? false) data-disabled="true" @endif
      @if ($readOnly ?? false) data-readonly="true" @endif>
