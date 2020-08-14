@@ -11,7 +11,7 @@ Tailwind.css ready components well tested for Laravel applications. Ideally with
 
 ## Support us
 
-If you like my work, you can [sponsoring me](https://github.com/masterix21).
+If you like my work, you can [sponsoring me](https://github.com/sponsors/masterix21).
 
 ## Installation
 
