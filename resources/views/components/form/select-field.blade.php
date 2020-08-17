@@ -8,15 +8,17 @@
         <x-slot name="prepend">{{ $prepend }}</x-slot>
     @endif
 
-    <div x-data="{ isOn: false, value: {{ json_encode($value ?: []) }}, options: {{ json_encode($options) }} }"
+    <div x-data="{ isOn: false, value: {{ json_encode($value ?: []) }}, options: {{ json_encode($options) }}, popper: null }"
          @if ($id ?? false) id="{{ $id }}" @endif
          class="relative w-full"
+         x-init="popper = createPopper($refs.btn, $refs.menu, { modifiers: [flip, preventOverflow] })"
          @click.away="isOn = false"
          {{ $attributes }}
          wire:ignore.self>
                 <span class="inline-block w-full rounded-md">
                     <button type="button"
-                            @click="isOn = ! isOn"
+                            x-ref="btn"
+                            @click="isOn = ! isOn; $nextTick(() => popper.update())"
                             class="cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
                         @if ($multiple)
                             <div class="flex flex-wrap space-x-1">
@@ -39,7 +41,7 @@
                     </button>
                 </span>
 
-        <div x-show="isOn" x-cloak class="z-10 absolute mt-1 w-full rounded-md bg-white shadow-lg">
+        <div x-show="isOn" x-cloak x-ref="menu" class="z-10 absolute mt-1 w-full rounded-md bg-white shadow-lg">
             <ul tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-item-3" class="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5">
                 @foreach ($options as $key => $label)
                     <li class="text-gray-900 cursor-pointer select-none relative py-2 pl-3 pr-9 hover:bg-gray-50"

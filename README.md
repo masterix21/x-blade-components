@@ -18,12 +18,12 @@ You can install the package via composer:
 ```bash
 composer require masterix21/x-blade-components
 
-npm install tailwindcss @tailwindcss/ui alpinejs imask flatpickr
+npm install tailwindcss @tailwindcss/ui alpinejs imask flatpickr @popperjs/core
 // or
-yarn add tailwindcss @tailwindcss/ui alpinejs imask flatpickr
+yarn add tailwindcss @tailwindcss/ui alpinejs imask flatpickr @popperjs/core
 ```
 
-Then add `@tailwindcss/ui` to your Tailwind plugin list:
+Add `@tailwindcss/ui` to your Tailwind plugin list:
 ```js
 // tailwind.config.js
 module.exports = {
@@ -33,11 +33,33 @@ module.exports = {
 }
 ```
 
-Finally, it's important to add all styles to our css, less or scss:
+Add all styles to our css, less or scss:
 ```scss
 [x-cloak] { display: none; }
 
 @import '~flatpickr/dist/flatpickr.min.css';
+```
+
+And finally, import all javascript scripts needed:
+```js
+// The awesome AlpineJS
+import 'alpinejs';
+
+// Flatpickr Calendar
+import flatpickr from "flatpickr";
+window.flatpickr = flatpickr;
+
+// IMask to add input masks support
+import IMask from 'imask';
+window.IMask = IMask;
+
+// PopperJS for the best element alignment
+import { createPopper } from '@popperjs/core/lib/popper-lite.js';
+import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow.js';
+import flip from '@popperjs/core/lib/modifiers/flip.js';
+window.createPopper = createPopper;
+window.preventOverflow = preventOverflow;
+window.flip = flip;
 ```
 
 ## Usage
