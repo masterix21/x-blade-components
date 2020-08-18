@@ -3,6 +3,7 @@
 namespace Masterix21\XBladeComponents;
 
 use Illuminate\Support\ServiceProvider;
+use Masterix21\XBladeComponents\View\Components\Button\Confirm;
 use Masterix21\XBladeComponents\View\Components\Form\DateField;
 use Masterix21\XBladeComponents\View\Components\Form\Field;
 use Masterix21\XBladeComponents\View\Components\Form\InputField;
@@ -22,16 +23,17 @@ class XBladeComponentsServiceProvider extends ServiceProvider
                 __DIR__ . '/../config/x-blade-components.php' => config_path('x-blade-components.php'),
             ], 'config');
 
-            /*
             $this->publishes([
                 __DIR__.'/../resources/views' => base_path('resources/views/vendor/x-blade-components'),
             ], 'views');
-            */
         }
 
         $this->loadViewsFrom(__DIR__ .'/../resources/views/components', 'bc');
 
         $this->loadViewComponentsAs('bc', [
+            /**
+             * Form
+             */
             Field::class,
             InputField::class,
             TextareaField::class,
@@ -41,6 +43,11 @@ class XBladeComponentsServiceProvider extends ServiceProvider
             ToggleField::class,
             DateField::class,
             SelectField::class,
+
+            /**
+             * Button
+             */
+            Confirm::class,
         ]);
     }
 
