@@ -35,9 +35,13 @@ module.exports = {
 
 Add all styles to our css, less or scss:
 ```scss
-[x-cloak] { display: none; }
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import '~flatpickr/dist/flatpickr.min.css';
+@import "~flatpickr/dist/themes/airbnb.css";
+
+[x-cloak] { display: none; }
 ```
 
 And finally, import all javascript scripts needed:
