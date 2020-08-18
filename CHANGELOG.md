@@ -2,7 +2,7 @@
 
 All notable changes to `x-blade-components` will be documented in this file
 
-## 1.0.3 - unreleased
+## 1.0.3 - 2020-08-18
 - 🐛 Missed select-field red border with errors
 - 💅 Confirm button
 
