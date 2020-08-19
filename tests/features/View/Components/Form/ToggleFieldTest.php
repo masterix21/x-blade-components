@@ -1,6 +1,7 @@
 <?php
 namespace Masterix21\XBladeComponents\Tests\features\View\Components\Form;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Masterix21\XBladeComponents\View\Components\Form\ToggleField;
 
@@ -23,6 +24,15 @@ class ToggleFieldTest extends TestCase
             ->with('attributes', null)
             ->with('trueValue', true)
             ->with('falseValue', false);
+    }
+
+    /** @test */
+    public function blade_resolve_the_component_name()
+    {
+        $this->assertStringContainsString(
+            ToggleField::class,
+            Blade::compileString("<x-bc-form:toggle-field />")
+        );
     }
 
     /** @test */

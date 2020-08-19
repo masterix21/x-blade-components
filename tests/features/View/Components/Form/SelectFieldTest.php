@@ -1,6 +1,7 @@
 <?php
 namespace Masterix21\XBladeComponents\Tests\features\View\Components\Form;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Masterix21\XBladeComponents\View\Components\Form\SelectField;
 
@@ -24,6 +25,15 @@ class SelectFieldTest extends TestCase
             ->with('placeholder', 'Select a value')
             ->with('options', ['one' => 'One label', 'two' => 'Two label'])
             ->with('multiple', false);
+    }
+
+    /** @test */
+    public function blade_resolve_the_component_name()
+    {
+        $this->assertStringContainsString(
+            SelectField::class,
+            Blade::compileString("<x-bc-form:select-field />")
+        );
     }
 
     /** @test */

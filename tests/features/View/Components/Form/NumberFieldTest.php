@@ -1,6 +1,7 @@
 <?php
 namespace Masterix21\XBladeComponents\Tests\features\View\Components\Form;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Masterix21\XBladeComponents\View\Components\Form\NumberField;
 
@@ -22,6 +23,15 @@ class NumberFieldTest extends TestCase
             ->with('disabled', false)
             ->with('attributes', null)
             ->with('scale', 0);
+    }
+
+    /** @test */
+    public function blade_resolve_the_component_name()
+    {
+        $this->assertStringContainsString(
+            NumberField::class,
+            Blade::compileString("<x-bc-form:number-field />")
+        );
     }
 
     /** @test */

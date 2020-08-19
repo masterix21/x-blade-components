@@ -1,6 +1,7 @@
 <?php
 namespace Masterix21\XBladeComponents\Tests\features\View\Components\Form;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Masterix21\XBladeComponents\View\Components\Form\InputField;
 
@@ -21,6 +22,15 @@ class InputFieldTest extends TestCase
             ->with('readOnly', false)
             ->with('disabled', false)
             ->with('attributes', null);
+    }
+
+    /** @test */
+    public function blade_resolve_the_component_name()
+    {
+        $this->assertStringContainsString(
+            InputField::class,
+            Blade::compileString("<x-bc-form:input-field />")
+        );
     }
 
     /** @test */

@@ -1,6 +1,7 @@
 <?php
 namespace Masterix21\XBladeComponents\Tests\features\View\Components\Form;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Masterix21\XBladeComponents\View\Components\Form\Field;
 
@@ -17,6 +18,15 @@ class FieldTest extends TestCase
             ->with('errorBag', null)
             ->with('slot', null)
             ->with('hideContainerBorder', false);
+    }
+
+    /** @test */
+    public function blade_resolve_the_component_name()
+    {
+        $this->assertStringContainsString(
+            Field::class,
+            Blade::compileString("<x-bc-form:field />")
+        );
     }
 
     /** @test */

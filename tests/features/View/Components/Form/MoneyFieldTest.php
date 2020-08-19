@@ -1,6 +1,7 @@
 <?php
 namespace Masterix21\XBladeComponents\Tests\features\View\Components\Form;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Masterix21\XBladeComponents\View\Components\Form\MoneyField;
 
@@ -23,6 +24,15 @@ class MoneyFieldTest extends TestCase
             ->with('attributes', null)
             ->with('scale', 2)
             ->with('currency', '$');
+    }
+
+    /** @test */
+    public function blade_resolve_the_component_name()
+    {
+        $this->assertStringContainsString(
+            MoneyField::class,
+            Blade::compileString("<x-bc-form:money-field />")
+        );
     }
 
     /** @test */
