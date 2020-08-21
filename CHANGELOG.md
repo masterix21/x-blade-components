@@ -2,6 +2,9 @@
 
 All notable changes to `x-blade-components` will be documented in this file
 
+## 1.0.5 - unreleased
+- 💅 ask-button-class property for confirm button
+
 ## 1.0.4 - 2020-08-19
 - 🐛 Slot not visible on confirm button
 
