@@ -1,9 +1,7 @@
 <div @if ($id ?? null) id="container-{{ $id }}" @endif
      class="space-y-1"
      @if ($disabled ?? false) data-disabled="true" @endif
-     @if ($readOnly ?? false) data-readonly="true" @endif
-     {{ $attributes }}
->
+     @if ($readOnly ?? false) data-readonly="true" @endif>
     @if (! blank($label))
         <label @if ($id ?? null) for="{{ $id }}" @endif class="block text-sm font-medium leading-5 @error($errorBag) text-red-500 @else text-gray-700 @enderror">{{ __($label) }}</label>
     @endif
