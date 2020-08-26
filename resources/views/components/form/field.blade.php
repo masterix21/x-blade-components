@@ -3,7 +3,7 @@
      @if ($disabled ?? false) data-disabled="true" @endif
      @if ($readOnly ?? false) data-readonly="true" @endif>
     @if (! blank($label))
-        <label class="block text-sm font-medium leading-5 @error($errorBag) text-red-500 @else text-gray-700 @enderror">{{ __($label) }}</label>
+        <label @if ($id ?? null) for="{{ $id }}" @endif class="block text-sm font-medium leading-5 @error($errorBag) text-red-500 @else text-gray-700 @enderror">{{ __($label) }}</label>
     @endif
 
     <div class="flex relative @if (! $hideContainerBorder) rounded-md shadow-sm @endif">
