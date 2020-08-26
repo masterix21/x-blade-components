@@ -2,8 +2,10 @@
 
 All notable changes to `x-blade-components` will be documented in this file
 
-## 1.0.5 - unreleased
+## 1.0.5 - 2020-08-26
 - 💅 ask-button-class property for confirm button
+- 🐛 Fixed password toggle
+- Add html attr `for` if $id supplied
 
 ## 1.0.4 - 2020-08-19
 - 🐛 Slot not visible on confirm button
