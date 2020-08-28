@@ -2,9 +2,16 @@
      class="space-y-1"
      @if ($disabled ?? false) data-disabled="true" @endif
      @if ($readOnly ?? false) data-readonly="true" @endif>
-    @if (! blank($label))
-        <label @if ($id ?? null) for="{{ $id }}" @endif class="block text-sm font-medium leading-5 @error($errorBag) text-red-500 @else text-gray-700 @enderror">{{ __($label) }}</label>
-    @endif
+     
+    <div class="flex justify-between space-x-2">
+        @if (! blank($label))
+            <label @if ($id ?? null) for="{{ $id }}" @endif class="block text-sm font-medium leading-5 @error($errorBag) text-red-500 @else text-gray-700 @enderror">{{ __($label) }}</label>
+        @endif
+        
+        @if (! blank($hint))
+            <span class="text-sm leading-5 text-gray-500">{{ __($hint) }}</span>
+        @endif
+    </div>
 
     <div class="flex relative @if (! $hideContainerBorder) rounded-md shadow-sm @endif">
         {{ $prepend ?? null }}
@@ -23,6 +30,10 @@
 
         {{ $append ?? null }}
     </div>
+
+    @if (! blank($help))
+        <p class="mt-2 text-sm text-gray-500">{{ __($help) }}</p>
+    @endif
 
     @error($errorBag)
         <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
