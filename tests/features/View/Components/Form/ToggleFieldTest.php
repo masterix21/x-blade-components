@@ -16,6 +16,8 @@ class ToggleFieldTest extends TestCase
             ->with('id', Str::uuid())
             ->with('name', 'test-input-label')
             ->with('label', 'Test label')
+            ->with('hint', null)
+            ->with('help', null)
             ->with('value', null)
             ->with('errorBag', null)
             ->with('slot', null)

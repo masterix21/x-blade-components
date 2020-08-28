@@ -9,9 +9,9 @@ class DateField extends Field
     private ?string $mode;
     public string $flatpickrConfig;
 
-    public function __construct(?string $id = null, ?string $name = null, ?string $label = null, ?string $errorBag = null, bool $disabled = false, bool $readOnly = false, $value = null, ?string $displayFormat = null, ?string $valueFormat = null, ?string $mode = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $label = null, ?string $hint = null, ?string $help = null, ?string $errorBag = null, bool $disabled = false, bool $readOnly = false, $value = null, ?string $displayFormat = null, ?string $valueFormat = null, ?string $mode = null)
     {
-        parent::__construct($id, $name, $label, $errorBag, $disabled, $readOnly, $value);
+        parent::__construct($id, $name, $label, $hint, $help, $errorBag, $disabled, $readOnly, $value);
 
         $this->valueFormat = $valueFormat ?? 'Y-m-d';
         $this->displayFormat = $displayFormat ?? $this->valueFormat;

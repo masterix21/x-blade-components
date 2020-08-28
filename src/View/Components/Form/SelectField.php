@@ -11,6 +11,8 @@ class SelectField extends Field
         ?string $id = null,
         ?string $name = null,
         ?string $label = null,
+        ?string $hint = null, 
+        ?string $help = null,
         ?string $errorBag = null,
         bool $disabled = false,
         bool $readOnly = false,
@@ -19,7 +21,7 @@ class SelectField extends Field
         array $options = [],
         bool $multiple = false
     ) {
-        parent::__construct($id, $name, $label, $errorBag, $disabled, $readOnly, $value, $placeholder);
+        parent::__construct($id, $name, $label, $hint, $help, $errorBag, $disabled, $readOnly, $value, $placeholder);
 
         $this->options = $options;
         $this->multiple = $multiple;

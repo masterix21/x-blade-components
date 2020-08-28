@@ -26,8 +26,8 @@ class Field extends Component
         ?string $hint = null,
         ?string $help = null,
         ?string $errorBag = null,
-        bool $disabled = false,
-        bool $readOnly = false,
+        ?bool $disabled = false,
+        ?bool $readOnly = false,
         $value = null,
         ?string $placeholder = null,
         bool $hideContainerBorder = false
