@@ -1,5 +1,7 @@
 <x-bc-form:field :id="$id"
                  :label="$label"
+                 :hint="$hint"
+                 :help="$help"
                  :error-bag="$errorBag"
                  :readOnly="$readOnly"
                  :disabled="$disabled">
@@ -22,7 +24,8 @@
            @if ($readOnly) readonly @endif
            @if ($disabled) disabled @endif
            @if (! blank($name)) name="{{ $name }}" @endif
-           @if (! blank($value)) value="{{ $value }}" @endif />
+           @if (! blank($value)) value="{{ $value }}" @endif
+           @if (! blank($placeholder)) placeholder="{{ $placeholder }}" @endif />
 
     @if ($append ?? null)
         <x-slot name="append">{{ $append }}</x-slot>

@@ -1,5 +1,7 @@
 <x-bc-form:field :id="$id"
                  :label="$label"
+                 :hint="$hint"
+                 :help="$help"
                  :error-bag="$errorBag"
                  :readOnly="$readOnly"
                  :disabled="$disabled">
