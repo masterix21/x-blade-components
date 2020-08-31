@@ -11,7 +11,7 @@ class SelectField extends Field
         ?string $id = null,
         ?string $name = null,
         ?string $label = null,
-        ?string $hint = null, 
+        ?string $hint = null,
         ?string $help = null,
         ?string $errorBag = null,
         bool $disabled = false,
