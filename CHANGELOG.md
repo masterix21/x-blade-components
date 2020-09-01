@@ -2,6 +2,13 @@
 
 All notable changes to `x-blade-components` will be documented in this file
 
+## 1.0.7 - 2020-09-01
+- 🐛 Unremovable values from select multiple
+
+## 1.0.6 - 2020-08-31
+- 💅 Add hint and help base field properties (PR #4)
+- 🐛 fix placeholder (PR #4)
+
 ## 1.0.5 - 2020-08-26
 - 💅 ask-button-class property for confirm button
 - 🐛 Fixed password toggle
