@@ -15,17 +15,19 @@
         </div>
     </x-slot>
 
+    <div wire:ignore>
     <input @if ($id ?? false) id="{{ $id }}" @endif
            class="form-input block w-full rounded-none border-l-0 @if (blank($append ?? null)) rounded-r-md @else border-r-0 @endif transition ease-in-out duration-150 sm:text-sm sm:leading-5 {{ $errors->has($errorBag) ? 'pr-10 border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red ' : '' }} {{ $readOnly ? 'bg-gray-50 text-gray-500' : '' }}"
            {{ $attributes }}
            x-data
            x-ref="input"
-           x-init="flatpickr($refs.input, {{ $flatpickrConfig }})"
+           x-init="flatpickr($refs.input, {{ json_encode($flatpickrConfig) }})"
            @if ($readOnly) readonly @endif
            @if ($disabled) disabled @endif
            @if (! blank($name)) name="{{ $name }}" @endif
            @if (! blank($value)) value="{{ $value }}" @endif
            @if (! blank($placeholder)) placeholder="{{ $placeholder }}" @endif />
+    </div>
 
     @if ($append ?? null)
         <x-slot name="append">{{ $append }}</x-slot>

@@ -7,7 +7,7 @@ class DateField extends Field
     public string $displayFormat;
     public string $valueFormat;
     private ?string $mode;
-    public string $flatpickrConfig;
+    public array $flatpickrConfig;
 
     public function __construct(?string $id = null, ?string $name = null, ?string $label = null, ?string $hint = null, ?string $help = null, ?string $errorBag = null, bool $disabled = false, bool $readOnly = false, $value = null, ?string $displayFormat = null, ?string $valueFormat = null, ?string $mode = null)
     {
@@ -17,10 +17,10 @@ class DateField extends Field
         $this->displayFormat = $displayFormat ?? $this->valueFormat;
         $this->mode = $mode;
 
-        $this->flatpickrConfig = json_encode($this->buildFlatpickrConfig());
+        $this->flatpickrConfig = $this->buildFlatpickrConfig();
     }
 
-    private function buildFlatpickrConfig() : object
+    private function buildFlatpickrConfig() : array
     {
         $config = [
             "allowInput" => ! $this->readOnly && ! $this->disabled,
@@ -36,7 +36,7 @@ class DateField extends Field
             $config['mode'] = $this->mode;
         }
 
-        return (object) $config;
+        return $config;
     }
 
     public function render()
