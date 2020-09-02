@@ -2,6 +2,9 @@
 
 All notable changes to `x-blade-components` will be documented in this file
 
+## 1.0.8 - 2020-09-02
+- 🐛 Avoid date-field re-render using Livewire
+
 ## 1.0.7 - 2020-09-01
 - 🐛 Unremovable values from select multiple
 
