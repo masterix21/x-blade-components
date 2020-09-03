@@ -45,7 +45,7 @@ Add all styles to our css, less or scss:
 [x-cloak] { display: none; }
 ```
 
-And finally, import all javascript scripts needed:
+And finally, import all javascript scripts needed in the `bootstrap.js`:
 ```js
 // The awesome AlpineJS
 import 'alpinejs';
