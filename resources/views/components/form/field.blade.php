@@ -2,16 +2,18 @@
      class="space-y-1"
      @if ($disabled ?? false) data-disabled="true" @endif
      @if ($readOnly ?? false) data-readonly="true" @endif>
-     
-    <div class="flex justify-between space-x-2">
-        @if (! blank($label))
-            <label @if ($id ?? null) for="{{ $id }}" @endif class="block text-sm font-medium leading-5 @error($errorBag) text-red-500 @else text-gray-700 @enderror">{{ __($label) }}</label>
-        @endif
-        
-        @if (! blank($hint))
-            <span class="text-sm leading-5 text-gray-500">{{ __($hint) }}</span>
-        @endif
-    </div>
+
+    @if (! blank($label) || ! blank($hint))
+        <div class="flex justify-between space-x-2">
+            @if (! blank($label))
+                <label @if ($id ?? null) for="{{ $id }}" @endif class="block text-sm font-medium leading-5 @error($errorBag) text-red-500 @else text-gray-700 @enderror">{{ __($label) }}</label>
+            @endif
+
+            @if (! blank($hint))
+                <span class="text-sm leading-5 text-gray-500">{{ __($hint) }}</span>
+            @endif
+        </div>
+    @endif
 
     <div class="flex relative @if (! $hideContainerBorder) rounded-md shadow-sm @endif">
         {{ $prepend ?? null }}
