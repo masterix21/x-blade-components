@@ -10,7 +10,7 @@
         <x-slot name="prepend">{{ $prepend }}</x-slot>
     @endif
 
-    <a x-data="{isOn: {{ $trueValue === $value ? 'true' : 'false' }}, trueValue: {{ var_export($trueValue, true) }}, falseValue: {{ var_export($falseValue, true) }}}"
+    <a x-data="{isOn: {{ $trueValue === $value ? 'true' : 'false' }}, trueValue: {{ json_encode($trueValue) }}, falseValue: {{ json_encode($falseValue) }}}"
        {{ $attributes }}
        @if ($id ?? false) id="{{ $id }}" @endif
        x-on:click="isOn = {{ $readOnly || $disabled ? 'false' : '! isOn' }}"
