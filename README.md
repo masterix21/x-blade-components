@@ -45,7 +45,7 @@ Add all styles to our css, less or scss:
 [x-cloak] { display: none; }
 ```
 
-And finally, import all javascript scripts needed:
+Import in the `bootstrap.js` file all scripts needed:
 ```js
 // The awesome AlpineJS
 import 'alpinejs';
@@ -65,6 +65,20 @@ import flip from '@popperjs/core/lib/modifiers/flip.js';
 window.createPopper = createPopper;
 window.preventOverflow = preventOverflow;
 window.flip = flip;
+```
+
+And finally compile all:
+```bash
+# dev
+npm run dev 
+
+# production
+npm run prod
+
+# or, if you use yarn...
+yarn dev
+
+yarn prod
 ```
 
 ## Usage
