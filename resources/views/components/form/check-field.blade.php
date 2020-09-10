@@ -6,7 +6,7 @@
                  :readOnly="$readOnly"
                  :disabled="$disabled"
                  hide-container-border>
-    <div x-data="{isOn: {{ $trueValue === $value ? 'true' : 'false' }}, trueValue: {{ json_encode($trueValue) }}, falseValue: {{ json_encode($falseValue) }}}"
+    <div x-data="{isOn: {{ json_encode($trueValue === $value ? true : false) }}, trueValue: {{ json_encode($trueValue) }}, falseValue: {{ json_encode($falseValue) }}}"
          x-init="$watch('isOn', value => $dispatch('input', value ? trueValue : falseValue))"
          class="relative flex items-start">
         <div class="flex items-center h-5">
@@ -16,6 +16,7 @@
                    x-ref="input"
                    x-on:click="isOn = $refs.input.checked ? trueValue : falseValue"
                    {{ $attributes }}
+                   @if ($trueValue === $value) checked @endif
                    @if ($readOnly) readonly @endif
                    @if ($disabled) disabled @endif
                    @if (! blank($name)) name="{{ $name }}" @endif
