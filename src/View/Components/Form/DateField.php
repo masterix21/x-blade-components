@@ -8,8 +8,9 @@ class DateField extends Field
     public string $valueFormat;
     private ?string $mode;
     public array $flatpickrConfig;
+    public array $customConfig;
 
-    public function __construct(?string $id = null, ?string $name = null, ?string $label = null, ?string $hint = null, ?string $help = null, ?string $errorBag = null, bool $disabled = false, bool $readOnly = false, $value = null, ?string $displayFormat = null, ?string $valueFormat = null, ?string $mode = null)
+    public function __construct(?string $id = null, ?string $name = null, ?string $label = null, ?string $hint = null, ?string $help = null, ?string $errorBag = null, bool $disabled = false, bool $readOnly = false, $value = null, ?string $displayFormat = null, ?string $valueFormat = null, ?string $mode = null, ?array $customConfig = null)
     {
         parent::__construct($id, $name, $label, $hint, $help, $errorBag, $disabled, $readOnly, $value);
 
@@ -17,6 +18,7 @@ class DateField extends Field
         $this->displayFormat = $displayFormat ?? $this->valueFormat;
         $this->mode = $mode;
 
+        $this->customConfig = $customConfig ?? [];
         $this->flatpickrConfig = $this->buildFlatpickrConfig();
     }
 
@@ -36,7 +38,7 @@ class DateField extends Field
             $config['mode'] = $this->mode;
         }
 
-        return $config;
+        return array_merge($config, $this->customConfig);
     }
 
     public function render()
