@@ -2,6 +2,15 @@
 
 All notable changes to `x-blade-components` will be documented in this file
 
+## 1.0.10 - Unreleased
+- 💅 Money field value aligned to right
+
+## 1.0.9 - 2020-09-11
+- 💅 Add custom-config parameter to DateField
+- 💅 Check Field
+- 🐛 Removed an ugly space on empty label or hints
+- Upgrade to Laravel 8.0
+
 ## 1.0.8 - 2020-09-02
 - 🐛 Avoid date-field re-render using Livewire
 
